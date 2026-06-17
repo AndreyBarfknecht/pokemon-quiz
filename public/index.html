@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Qual Pokémon você seria?</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <main id="app">
+
+    <!-- Tela: Início -->
+    <section id="screen-start" class="screen active">
+      <div class="pokeball-hero" aria-hidden="true">
+        <div class="pokeball-top"></div>
+        <div class="pokeball-center"></div>
+        <div class="pokeball-bottom"></div>
+      </div>
+      <h1>Qual Pokémon você seria?</h1>
+      <p class="subtitle">7 perguntas para descobrir seu Pokémon espiritual</p>
+      <button id="btn-start" class="btn-primary">Começar quiz</button>
+    </section>
+
+    <!-- Tela: Quiz -->
+    <section id="screen-quiz" class="screen">
+      <div class="progress-wrap">
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <span class="progress-label" id="progress-label">1 / 7</span>
+      </div>
+      <p class="question-number" id="q-number">Pergunta 1</p>
+      <h2 class="question-text" id="q-text"></h2>
+      <div class="options" id="options"></div>
+      <button class="btn-primary disabled" id="btn-next">Próxima →</button>
+    </section>
+
+    <!-- Tela: Loading -->
+    <section id="screen-loading" class="screen">
+      <div class="pokeball-spin" aria-label="Carregando...">
+        <div class="pokeball-top"></div>
+        <div class="pokeball-center"></div>
+        <div class="pokeball-bottom"></div>
+      </div>
+      <p class="loading-text">Calculando seu Pokémon...</p>
+    </section>
+
+    <!-- Tela: Resultado -->
+    <section id="screen-result" class="screen">
+      <p class="result-intro">Você seria...</p>
+      <div class="result-card" id="result-card">
+        <img id="r-img" src="" alt="" class="pokemon-img">
+        <div class="result-info">
+          <div class="result-header">
+            <h2 id="r-name"></h2>
+            <span id="r-number" class="pokemon-number"></span>
+          </div>
+          <div id="r-types" class="type-badges"></div>
+          <p id="r-desc" class="pokemon-desc"></p>
+          <div class="stats-grid" id="r-stats"></div>
+        </div>
+      </div>
+      <div id="r-error" class="error-msg" hidden></div>
+      <button class="btn-secondary" id="btn-retry">Jogar de novo</button>
+    </section>
+
+  </main>
+
+  <script src="js/questions.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>
